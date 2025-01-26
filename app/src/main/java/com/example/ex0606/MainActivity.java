@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView iView;
     Button btn;
     Random rnd;
-    int num;
+    int num = 1;
+    int x = 1;
     String st;
 
     @Override
@@ -32,6 +33,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void go(View view)
     {
+        btn.setTextSize(100);
+        do
+        {
+            x = num;
+            num = rnd.nextInt(3) + 1;
+        }
+        while (num==x);
+        st = num + "";
+        btn.setText(st);
 
+        if (num == 1)
+        {
+            iView.setImageResource(R.drawable.ex0606namber1);
+        }
+        else if (num == 2)
+        {
+            iView.setImageResource(R.drawable.ex0606namber2);
+        }
+        else
+        {
+            iView.setImageResource(R.drawable.ex0606namber3);
+        }
     }
 }
